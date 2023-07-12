@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40552A222A5F3EED006BBFD1 /* LocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40552A212A5F3EED006BBFD1 /* LocationUseCase.swift */; };
+		40552A242A5F4D2E006BBFD1 /* UpdatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40552A232A5F4D2E006BBFD1 /* UpdatedData.swift */; };
 		406458642A5AB2E8005089FB /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EFE2A5A8CB500626202 /* APIClient.swift */; };
 		40858ECA2A5A66C000626202 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EC92A5A66C000626202 /* Persistence.swift */; };
 		40858ECD2A5A66C000626202 /* ISS_Journey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40858ECB2A5A66C000626202 /* ISS_Journey.xcdatamodeld */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40552A212A5F3EED006BBFD1 /* LocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUseCase.swift; sourceTree = "<group>"; };
+		40552A232A5F4D2E006BBFD1 /* UpdatedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedData.swift; sourceTree = "<group>"; };
 		4072F05F2A5F1FD70011B430 /* ISS-Journey-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ISS-Journey-Info.plist"; sourceTree = SOURCE_ROOT; };
 		40858EBD2A5A66BF00626202 /* ISS_Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISS_Journey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40858EC42A5A66C000626202 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,7 +115,6 @@
 			children = (
 				4072F05F2A5F1FD70011B430 /* ISS-Journey-Info.plist */,
 				40858EF62A5A6BDC00626202 /* Views */,
-				40858EF52A5A6BCC00626202 /* ViewControllers */,
 				40858EF42A5A691200626202 /* ViewModels */,
 				40858EF32A5A690200626202 /* Models */,
 				40858EF22A5A68F200626202 /* Adapters */,
@@ -162,6 +165,7 @@
 		40858EF12A5A68C100626202 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				40552A212A5F3EED006BBFD1 /* LocationUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -178,6 +182,7 @@
 		40858EF32A5A690200626202 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				40552A232A5F4D2E006BBFD1 /* UpdatedData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,13 +193,6 @@
 				40858F042A5AA1EF00626202 /* ISSViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		40858EF52A5A6BCC00626202 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		40858EF62A5A6BDC00626202 /* Views */ = {
@@ -358,7 +356,9 @@
 				40858F012A5A8DDD00626202 /* CoreDataModels.swift in Sources */,
 				40858F092A5AA66900626202 /* AppMain.swift in Sources */,
 				40858EF82A5A7F2F00626202 /* ISSEntity.swift in Sources */,
+				40552A222A5F3EED006BBFD1 /* LocationUseCase.swift in Sources */,
 				40858F032A5A8EC600626202 /* CoreDataManager.swift in Sources */,
+				40552A242A5F4D2E006BBFD1 /* UpdatedData.swift in Sources */,
 				40858EFC2A5A8C9A00626202 /* ISSService.swift in Sources */,
 				40858F072A5AA57200626202 /* ISSTrackView.swift in Sources */,
 			);

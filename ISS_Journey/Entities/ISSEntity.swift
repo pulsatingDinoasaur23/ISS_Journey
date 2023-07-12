@@ -51,7 +51,7 @@ class Position: Codable {
         let currentLocation = CLLocation(latitude: self.latitude, longitude: self.longitude)
         
         let distance = currentLocation.distance(from: previousLocation)
-        let timeInterval = 1.0 // Unidad de tiempo en segundos
+        let timeInterval = 10.0 // Unidad de tiempo en segundos
         
         let speed = distance / timeInterval
         

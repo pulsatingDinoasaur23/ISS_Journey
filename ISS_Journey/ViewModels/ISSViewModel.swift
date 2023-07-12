@@ -12,28 +12,43 @@ class ISSViewModel: ObservableObject {
     @Published var latitude: String = ""
     @Published var longitude: String = ""
     @Published var timestamp: Int = 0
-    
+    @Published var isTrackingEnabled: Bool = false
 
-    private let apiClient: APIClient 
+    private let apiClient: APIClient
+    private let locationUseCase: LocationUseCase
 
-    init(apiClient: APIClient) {
+    init(apiClient: APIClient, locationUseCase: LocationUseCase) {
         self.apiClient = apiClient
+        self.locationUseCase = locationUseCase
+        self.locationUseCase.delegate = self
+    }
+
+    func startTrackingLocation() {
+        locationUseCase.startUpdatingLocation()
+    }
+
+    func stopTrackingLocation() {
+        locationUseCase.stopUpdatingLocation()
     }
 
     func fetchISSLocation() {
-        apiClient.fetchISSLocation { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let issData):
-                DispatchQueue.main.async {
-                    self.latitude = issData.issPosition.latitude
-                    self.longitude = issData.issPosition.longitude
-                    self.timestamp = issData.timestamp
-                    // Actualiza otras propiedades observables con los datos obtenidos
-                }
-            case .failure(let error):
-                print("Error al obtener la ubicación de ISS: \(error)")
-            }
+        if isTrackingEnabled {
+            locationUseCase.startUpdatingLocation()
         }
+    }
+}
+
+extension ISSViewModel: LocationUseCaseDelegate {
+    func didUpdateISSLocation(latitude: Double, longitude: Double) {
+        DispatchQueue.main.async {
+            self.latitude = String(latitude)
+            self.longitude = String(longitude)
+            self.timestamp = Int()
+            // Actualiza otras propiedades observables con los datos obtenidos
+        }
+    }
+
+    func didFailToUpdateISSLocation(error: Error) {
+        print("Error al obtener la ubicación de ISS: \(error)")
     }
 }
