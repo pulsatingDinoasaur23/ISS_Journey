@@ -27,10 +27,11 @@ struct MapView: UIViewRepresentable {
 }
 
 struct ISSView: View {
-    @ObservedObject private var viewModel: ISSViewModel
+    @StateObject private var viewModel: ISSViewModel
+    @State private var isTrackingEnabled = false
 
     init(viewModel: ISSViewModel) {
-        self.viewModel = viewModel
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
 
     var body: some View {
@@ -44,24 +45,19 @@ struct ISSView: View {
             Text("Longitude: \(viewModel.longitude)")
             Text("Speed: \(viewModel.timestamp)")
 
-            Button(action: {
-                if viewModel.isTrackingEnabled {
-                    viewModel.stopTrackingLocation()
-                } else {
-                    viewModel.startTrackingLocation()
-                }
-            }) {
-                Text(viewModel.isTrackingEnabled ? "Stop Tracking" : "Start Tracking")
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            }
-            .padding()
+            Toggle("Track Location", isOn: $isTrackingEnabled)
+                .padding()
 
         }
         .onAppear {
             viewModel.fetchISSLocation()
+        }
+        .onChange(of: isTrackingEnabled) { enabled in
+            if enabled {
+                viewModel.startTrackingLocation()
+            } else {
+                viewModel.stopTrackingLocation()
+            }
         }
     }
 }

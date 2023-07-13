@@ -9,6 +9,11 @@ import Foundation
 import CoreData
 import CoreLocation
 
+
+
+
+
+
 class CoreDataManager {
     static let shared = CoreDataManager()
     

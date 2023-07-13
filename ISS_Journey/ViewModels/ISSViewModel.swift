@@ -8,16 +8,27 @@
 import Foundation
 import Combine
 
-class ISSViewModel: ObservableObject {
+protocol ISSViewModelProtocol: AnyObject {
+    var latitude: String { get }
+    var longitude: String { get }
+    var timestamp: Int { get }
+    var isTrackingEnabled: Bool { get set }
+    
+    func startTrackingLocation()
+    func stopTrackingLocation()
+    func fetchISSLocation()
+}
+
+class ISSViewModel: ISSViewModelProtocol, ObservableObject {
     @Published var latitude: String = ""
     @Published var longitude: String = ""
     @Published var timestamp: Int = 0
     @Published var isTrackingEnabled: Bool = false
 
-    private let apiClient: APIClient
-    private let locationUseCase: LocationUseCase
+    private let apiClient: APIClientProtocol
+    private var locationUseCase: LocationUseCaseProtocol
 
-    init(apiClient: APIClient, locationUseCase: LocationUseCase) {
+    init(apiClient: APIClient, locationUseCase: LocationUseCaseProtocol) {
         self.apiClient = apiClient
         self.locationUseCase = locationUseCase
         self.locationUseCase.delegate = self
@@ -44,7 +55,7 @@ extension ISSViewModel: LocationUseCaseDelegate {
             self.latitude = String(latitude)
             self.longitude = String(longitude)
             self.timestamp = Int()
-            // Actualiza otras propiedades observables con los datos obtenidos
+            // Update other observable properties with the obtained data
         }
     }
 

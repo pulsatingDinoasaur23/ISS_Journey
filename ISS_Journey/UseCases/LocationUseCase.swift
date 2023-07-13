@@ -11,27 +11,30 @@ protocol LocationUseCaseDelegate: AnyObject {
     func didUpdateISSLocation(latitude: Double, longitude: Double)
     func didFailToUpdateISSLocation(error: Error)
 }
+protocol LocationUseCaseProtocol{
+    var delegate: LocationUseCaseDelegate? { get set }
+   func startUpdatingLocation()
+    func stopUpdatingLocation()
+    func fetchISSLocation() -> Void
+}
 
-class LocationUseCase {
-    private let apiClient: APIClient
+class LocationUseCase: LocationUseCaseProtocol {
+    private let apiClient: APIClientProtocol
     private let updateInterval: TimeInterval = 10 // Actualización cada 10 segundos
     private var timer: Timer?
     weak var delegate: LocationUseCaseDelegate?
     
-    init(apiClient: APIClient) {
+    init(apiClient: APIClientProtocol) {
         self.apiClient = apiClient
     }
     
     func startUpdatingLocation() {
-        // Detener el temporizador si ya está en ejecución
         stopUpdatingLocation()
         
-        // Iniciar el temporizador con el intervalo especificado
         timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true) { [weak self] _ in
             self?.fetchISSLocation()
         }
         
-        // Iniciar la primera actualización inmediatamente
         fetchISSLocation()
     }
     
@@ -40,7 +43,7 @@ class LocationUseCase {
         timer = nil
     }
     
-    private func fetchISSLocation() {
+    internal func fetchISSLocation() {
         apiClient.fetchISSLocation { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -55,5 +58,8 @@ class LocationUseCase {
             }
         }
     }
-
+    
+    deinit {
+        stopUpdatingLocation()
+    }
 }
