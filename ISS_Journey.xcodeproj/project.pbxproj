@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		40552A222A5F3EED006BBFD1 /* LocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40552A212A5F3EED006BBFD1 /* LocationUseCase.swift */; };
 		40552A242A5F4D2E006BBFD1 /* UpdatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40552A232A5F4D2E006BBFD1 /* UpdatedData.swift */; };
+		40552A2A2A60974E006BBFD1 /* DistancesUsesCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40552A292A60974E006BBFD1 /* DistancesUsesCase.swift */; };
+		40552A2C2A61F41D006BBFD1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40552A2B2A61F41D006BBFD1 /* CoreDataStack.swift */; };
 		406458642A5AB2E8005089FB /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EFE2A5A8CB500626202 /* APIClient.swift */; };
 		40858ECA2A5A66C000626202 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EC92A5A66C000626202 /* Persistence.swift */; };
-		40858ECD2A5A66C000626202 /* ISS_Journey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40858ECB2A5A66C000626202 /* ISS_Journey.xcdatamodeld */; };
+		40858ECD2A5A66C000626202 /* ISSEntity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40858ECB2A5A66C000626202 /* ISSEntity.xcdatamodeld */; };
 		40858ED82A5A66C000626202 /* ISS_JourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858ED72A5A66C000626202 /* ISS_JourneyTests.swift */; };
 		40858EE22A5A66C000626202 /* ISS_JourneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EE12A5A66C000626202 /* ISS_JourneyUITests.swift */; };
 		40858EE42A5A66C000626202 /* ISS_JourneyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EE32A5A66C000626202 /* ISS_JourneyUITestsLaunchTests.swift */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		40552A212A5F3EED006BBFD1 /* LocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUseCase.swift; sourceTree = "<group>"; };
 		40552A232A5F4D2E006BBFD1 /* UpdatedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedData.swift; sourceTree = "<group>"; };
+		40552A292A60974E006BBFD1 /* DistancesUsesCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistancesUsesCase.swift; sourceTree = "<group>"; };
+		40552A2B2A61F41D006BBFD1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		4072F05F2A5F1FD70011B430 /* ISS-Journey-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ISS-Journey-Info.plist"; sourceTree = SOURCE_ROOT; };
 		40858EBD2A5A66BF00626202 /* ISS_Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISS_Journey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40858EC42A5A66C000626202 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,7 +126,7 @@
 				40858EF02A5A671700626202 /* Entities */,
 				40858EC42A5A66C000626202 /* Assets.xcassets */,
 				40858EC92A5A66C000626202 /* Persistence.swift */,
-				40858ECB2A5A66C000626202 /* ISS_Journey.xcdatamodeld */,
+				40858ECB2A5A66C000626202 /* ISSEntity.xcdatamodeld */,
 				40858EC62A5A66C000626202 /* Preview Content */,
 			);
 			path = ISS_Journey;
@@ -166,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				40552A212A5F3EED006BBFD1 /* LocationUseCase.swift */,
+				40552A292A60974E006BBFD1 /* DistancesUsesCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				40858F002A5A8DDD00626202 /* CoreDataModels.swift */,
+				40552A2B2A61F41D006BBFD1 /* CoreDataStack.swift */,
 				40858F022A5A8EC600626202 /* CoreDataManager.swift */,
 			);
 			path = Data;
@@ -351,11 +357,13 @@
 			files = (
 				40858F052A5AA1F000626202 /* ISSViewModel.swift in Sources */,
 				40858ECA2A5A66C000626202 /* Persistence.swift in Sources */,
-				40858ECD2A5A66C000626202 /* ISS_Journey.xcdatamodeld in Sources */,
+				40858ECD2A5A66C000626202 /* ISSEntity.xcdatamodeld in Sources */,
 				406458642A5AB2E8005089FB /* APIClient.swift in Sources */,
 				40858F012A5A8DDD00626202 /* CoreDataModels.swift in Sources */,
 				40858F092A5AA66900626202 /* AppMain.swift in Sources */,
 				40858EF82A5A7F2F00626202 /* ISSEntity.swift in Sources */,
+				40552A2C2A61F41D006BBFD1 /* CoreDataStack.swift in Sources */,
+				40552A2A2A60974E006BBFD1 /* DistancesUsesCase.swift in Sources */,
 				40552A222A5F3EED006BBFD1 /* LocationUseCase.swift in Sources */,
 				40858F032A5A8EC600626202 /* CoreDataManager.swift in Sources */,
 				40552A242A5F4D2E006BBFD1 /* UpdatedData.swift in Sources */,
@@ -716,13 +724,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		40858ECB2A5A66C000626202 /* ISS_Journey.xcdatamodeld */ = {
+		40858ECB2A5A66C000626202 /* ISSEntity.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				40858ECC2A5A66C000626202 /* ISS_Journey.xcdatamodel */,
 			);
 			currentVersion = 40858ECC2A5A66C000626202 /* ISS_Journey.xcdatamodel */;
-			path = ISS_Journey.xcdatamodeld;
+			path = ISSEntity.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

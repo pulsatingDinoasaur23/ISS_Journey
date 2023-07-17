@@ -24,11 +24,13 @@ class Position: Codable {
     var longitude: Double
     var speed: CLLocationSpeed?
     var course: CLLocationDirection?
+    var timestamp: TimeInterval
     
-    init(latitude: Double, longitude: Double, speed: CLLocationSpeed? = nil, course: CLLocationDirection? = nil) throws {
+    init(latitude: Double, longitude: Double, speed: CLLocationSpeed? = nil, timestamp: TimeInterval, course: CLLocationDirection? = nil) throws {
         self.latitude = latitude
         self.longitude = longitude
         self.speed = speed
+        self.timestamp = timestamp
         self.course = course
         
         try validate(latitude: latitude, longitude: longitude)
@@ -44,29 +46,24 @@ class Position: Codable {
         }
     }
     
-    func calculateSpeedAndCourse(previousPosition: Position?) {
-        guard let previousPosition = previousPosition else { return }
+    func calculateSpeedAndCourse(previousPosition: Position?) -> CLLocationSpeed? {
+        guard let previousPosition = previousPosition else { return nil }
         
         let previousLocation = CLLocation(latitude: previousPosition.latitude, longitude: previousPosition.longitude)
         let currentLocation = CLLocation(latitude: self.latitude, longitude: self.longitude)
         
         let distance = currentLocation.distance(from: previousLocation)
-        let timeInterval = 10.0 // Unidad de tiempo en segundos
+        let timeInterval = self.timestamp - previousPosition.timestamp
+        
+        guard distance > 0 && timeInterval > 0 else { return nil }
         
         let speed = distance / timeInterval
         
-        self.speed = speed
-        
-        if distance > 0 {
-            let direction = atan2(currentLocation.coordinate.latitude - previousLocation.coordinate.latitude, currentLocation.coordinate.longitude - previousLocation.coordinate.longitude)
-            self.course = direction * 180.0 / .pi
-        } else {
-            self.course = nil
-        }
+        return speed
     }
-}
-
-enum ValidationError: Error {
-    case invalidLatitude
-    case invalidLongitude
+    
+    enum ValidationError: Error {
+        case invalidLatitude
+        case invalidLongitude
+    }
 }

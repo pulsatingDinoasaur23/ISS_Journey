@@ -16,11 +16,13 @@ import CoreLocation
 
 class CoreDataManager {
     static let shared = CoreDataManager()
+        
+        private let persistentContainer: NSPersistentContainer
+        let timestamp: TimeInterval = Date().timeIntervalSince1970
+
     
-    private let persistentContainer: NSPersistentContainer
-    
-    init() {
-        persistentContainer = NSPersistentContainer(name: "ISS_Journey") // Reemplaza "YourDataModel" con el nombre de tu modelo de datos en CoreData
+    private init() {
+        persistentContainer = NSPersistentContainer(name: "ISSEntity") // Reemplaza "ISSEntity" con el nombre de tu modelo de datos en CoreData
         persistentContainer.loadPersistentStores { (description, error) in
             if let error = error {
                 fatalError("Failed to initialize CoreData: \(error)")
@@ -34,10 +36,12 @@ class CoreDataManager {
         context.perform {
             let issEntity = ISSEntity(context: context)
             
-            issEntity.setValue(latitude, forKey: "latitude")
-            issEntity.setValue(longitude, forKey: "longitude")
-            issEntity.setValue(speed, forKey: "speed")
-            issEntity.setValue(direction, forKey: "direction")
+            do {
+                let position = try Position(latitude: latitude, longitude: longitude, speed: speed, timestamp: self.timestamp)
+                issEntity.position = position
+            } catch {
+                print("Error al crear la posición de ISS: \(error)")
+            }
             
             do {
                 try context.save()

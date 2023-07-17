@@ -28,6 +28,7 @@ struct MapView: UIViewRepresentable {
 
 struct ISSView: View {
     @StateObject private var viewModel: ISSViewModel
+    
     @State private var isTrackingEnabled = false
 
     init(viewModel: ISSViewModel) {
@@ -43,8 +44,8 @@ struct ISSView: View {
 
             Text("Latitude: \(viewModel.latitude)")
             Text("Longitude: \(viewModel.longitude)")
+            
             Text("Speed: \(viewModel.timestamp)")
-
             Toggle("Track Location", isOn: $isTrackingEnabled)
                 .padding()
 
