@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LocationUseCaseDelegate: AnyObject {
-    func didUpdateISSLocation(latitude: Double, longitude: Double)
+    func didUpdateISSLocation(latitude: Double, longitude: Double, timestamp: Int32)
     func didFailToUpdateISSLocation(error: Error)
 }
 protocol LocationUseCaseProtocol{
@@ -24,6 +24,7 @@ class LocationUseCase: LocationUseCaseProtocol {
     private var timer: Timer?
     weak var delegate: LocationUseCaseDelegate?
     
+    
     init(apiClient: APIClientProtocol) {
         self.apiClient = apiClient
     }
@@ -36,6 +37,7 @@ class LocationUseCase: LocationUseCaseProtocol {
         }
         
         fetchISSLocation()
+        
     }
     
     func stopUpdatingLocation() {
@@ -51,7 +53,8 @@ class LocationUseCase: LocationUseCaseProtocol {
                 if let latitude = Double(issData.issPosition.latitude),
                    let longitude = Double(issData.issPosition.longitude)
                 {
-                    self.delegate?.didUpdateISSLocation(latitude: latitude, longitude: longitude)
+                    let timestamp = Int32(issData.timestamp)
+                    self.delegate?.didUpdateISSLocation(latitude: latitude, longitude: longitude, timestamp: timestamp)
                 }
             case .failure(let error):
                 self.delegate?.didFailToUpdateISSLocation(error: error)

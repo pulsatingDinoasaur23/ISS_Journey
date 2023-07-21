@@ -10,28 +10,23 @@ import CoreData
 
 @main
 struct ISSApp: App {
-    private let context: NSManagedObjectContext = {
-        let container = NSPersistentContainer(name: "YourDataModelName")
-        container.loadPersistentStores { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        }
-        return container.viewContext
-    }()
-    
-    private let apiClient: APIClientProtocol = APIClient()
-    private var locationUseCase: LocationUseCaseProtocol {
-        LocationUseCase(apiClient: apiClient)
-    }
-    private var viewModel: ISSViewModelProtocol {
-        ISSViewModel(apiClient: apiClient, locationUseCase: locationUseCase, context: context)
-    }
+    var context: NSManagedObjectContext
 
+    init() {
+        // Obtener el contexto de CoreData
+        context = CoreDataManager.shared.persistenseStoreContainer.viewContext
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ISSView(viewModel: viewModel as! ISSViewModel)
-                .environment(\.managedObjectContext, context)
+            let apiClient: APIClientProtocol = APIClient()
+            var locationUseCase: LocationUseCaseProtocol = LocationUseCase(apiClient: apiClient)
+            let viewContext = CoreDataManager.shared.persistenseStoreContainer.viewContext
+            
+            let issViewModel = ISSViewModel(apiClient: apiClient, locationUseCase: locationUseCase, context: viewContext)
+            let issListViewModel = ISSListViewModel(context: viewContext)
+            
+            ISSView(viewModel: issViewModel, viewListModel: issListViewModel)
         }
     }
 }

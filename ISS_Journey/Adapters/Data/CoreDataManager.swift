@@ -12,43 +12,36 @@ import CoreLocation
 
 
 
-
-
 class CoreDataManager {
+    
+    let persistenseStoreContainer: NSPersistentContainer
     static let shared = CoreDataManager()
-        
-        private let persistentContainer: NSPersistentContainer
-        let timestamp: TimeInterval = Date().timeIntervalSince1970
-
     
-    private init() {
-        persistentContainer = NSPersistentContainer(name: "ISSEntity") // Reemplaza "ISSEntity" con el nombre de tu modelo de datos en CoreData
-        persistentContainer.loadPersistentStores { (description, error) in
-            if let error = error {
-                fatalError("Failed to initialize CoreData: \(error)")
+    private init(){
+        persistenseStoreContainer = NSPersistentContainer(name: "ISSEntity")
+        persistenseStoreContainer.loadPersistentStores { description, error in
+            if error != nil {
+                print("hubo pedo")
             }
         }
     }
-    
-    func saveISSData(latitude: Double, longitude: Double, speed: CLLocationSpeed, direction: CLLocationDirection) {
-        let context = persistentContainer.viewContext
-        
-        context.perform {
-            let issEntity = ISSEntity(context: context)
-            
-            do {
-                let position = try Position(latitude: latitude, longitude: longitude, speed: speed, timestamp: self.timestamp)
-                issEntity.position = position
-            } catch {
-                print("Error al crear la posición de ISS: \(error)")
-            }
-            
-            do {
-                try context.save()
-            } catch {
-                print("Error al guardar los datos de ISS en Core Data: \(error)")
-            }
-        }
-    }
-
 }
+
+func saveISSEntityCD(context: NSManagedObjectContext, latitude: String, longitude: String, timestamp: Int32) {
+    // Crea un nuevo objeto ISSEntityCD en el contexto
+    let newISSEntity = ISSEntityCD(context: context)
+    
+    // Asigna los valores de los atributos
+    newISSEntity.latitude = latitude
+    newISSEntity.longitude = longitude
+    newISSEntity.timestamp = timestamp
+    
+    // Guarda los cambios en Core Data
+    do {
+        try context.save()
+        print("Objeto ISSEntityCD guardado correctamente.")
+    } catch {
+        print("Error al guardar el objeto ISSEntityCD: \(error)")
+    }
+}
+

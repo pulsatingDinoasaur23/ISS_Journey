@@ -28,30 +28,36 @@ struct MapView: UIViewRepresentable {
 
 struct ISSView: View {
     @StateObject private var viewModel: ISSViewModel
-    
+    @StateObject private var viewListModel: ISSListViewModel
     @State private var isTrackingEnabled = false
+    @State private var isPresented: Bool = false
 
-    init(viewModel: ISSViewModel) {
+    init(viewModel: ISSViewModel, viewListModel: ISSListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        _viewListModel = StateObject(wrappedValue: viewListModel)
     }
 
     var body: some View {
-        VStack {
-            MapView(coordinate: CLLocationCoordinate2D(latitude: Double(viewModel.latitude) ?? 0, longitude: Double(viewModel.longitude) ?? 0))
-                .frame(height: 300)
-                .cornerRadius(10)
-                .padding()
+        NavigationView {
+            VStack {
+                MapView(coordinate: CLLocationCoordinate2D(latitude: Double(viewModel.latitude) ?? 0, longitude: Double(viewModel.longitude) ?? 0))
+                    .frame(height: 300)
+                    .cornerRadius(10)
+                    .padding()
 
-            Text("Latitude: \(viewModel.latitude)")
-            Text("Longitude: \(viewModel.longitude)")
-            
-            Text("Speed: \(viewModel.timestamp)")
-            Toggle("Track Location", isOn: $isTrackingEnabled)
-                .padding()
+                Text("Latitude: \(viewModel.latitude)")
+                Text("Longitude: \(viewModel.longitude)")
+                Text("Timestamp: \(viewModel.timestamp)")
 
+                Toggle("Track Location", isOn: $isTrackingEnabled)
+                    .padding()
+            }
+            .navigationTitle("Track ISS")
+            .navigationBarItems(trailing: menuButton) // Add the menu button to the leading side
         }
         .onAppear {
             viewModel.fetchISSLocation()
+            
         }
         .onChange(of: isTrackingEnabled) { enabled in
             if enabled {
@@ -59,6 +65,26 @@ struct ISSView: View {
             } else {
                 viewModel.stopTrackingLocation()
             }
+        }
+        .sheet(isPresented: $isPresented, onDismiss: {
+            // Code to run when the sheet is dismissed
+        }, content: {
+            ISSTrackDetail(vm: viewListModel)
+        })
+    }
+
+    // Create the menu button
+    var menuButton: some View {
+        Menu {
+            Button("Go To Locations") {
+                isPresented = true
+            }
+            Button("Option 2") {
+                // Add action for Option 2
+            }
+        } label: {
+            Image(systemName: "line.horizontal.3") // Replace this with the image you want for the menu icon
+                .imageScale(.large)
         }
     }
 }
