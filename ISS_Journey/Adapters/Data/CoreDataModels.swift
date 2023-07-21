@@ -7,7 +7,7 @@
 
 
 import Foundation
-
+//esta estructira es por que la estructura ISSentity de coredata no se puede apegar al protocolo decodable y managed all mismo tiempo 
 // MARK: - ISSLocalized
 struct ISSLocalized: Codable {
     let message: String

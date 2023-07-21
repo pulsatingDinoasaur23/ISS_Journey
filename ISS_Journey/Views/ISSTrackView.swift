@@ -31,6 +31,8 @@ struct ISSView: View {
     @StateObject private var viewListModel: ISSListViewModel
     @State private var isTrackingEnabled = false
     @State private var isPresented: Bool = false
+    @Environment(\.colorScheme) private var colorScheme
+
 
     init(viewModel: ISSViewModel, viewListModel: ISSListViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -79,12 +81,21 @@ struct ISSView: View {
             Button("Go To Locations") {
                 isPresented = true
             }
-            Button("Option 2") {
-                // Add action for Option 2
+            Button("change theme") {
+                toggleTheme()
             }
         } label: {
             Image(systemName: "line.horizontal.3") // Replace this with the image you want for the menu icon
                 .imageScale(.large)
         }
     }
-}
+    private func toggleTheme() {
+            if colorScheme == .light {
+                // Switch to dark mode
+                UIApplication.shared.windows.first?.rootViewController?.overrideUserInterfaceStyle = .dark
+            } else {
+                // Switch to light mode
+                UIApplication.shared.windows.first?.rootViewController?.overrideUserInterfaceStyle = .light
+            }
+        }
+    }

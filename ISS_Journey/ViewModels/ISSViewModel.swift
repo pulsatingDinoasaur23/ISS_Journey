@@ -40,7 +40,7 @@ class ISSViewModel: ISSViewModelProtocol, ObservableObject {
     
     func startTrackingLocation() {
         locationUseCase.startUpdatingLocation()
-        saveISSEntityCD(context: context, latitude: latitude, longitude: longitude, timestamp: timestamp)
+        
         
     }
     
@@ -62,13 +62,13 @@ extension ISSViewModel: LocationUseCaseDelegate {
         print("Error al obtener la ubicación de ISS: \(error)")
     }
     
-    func didUpdateISSLocation(latitude: Double, longitude: Double, timestamp: Int32) {
+    func didUpdateISSLocation(latitude: String, longitude: String, timestamp: Int32) {
         DispatchQueue.main.async { [self] in
             self.latitude = String(latitude)
             self.longitude = String(longitude)
             self.timestamp = Int32((timestamp))
             
-       
+            saveISSEntityCD(context: context, latitude: latitude, longitude: longitude, timestamp: timestamp)
             // Actualiza otras propiedades observables con los datos obtenidos
         }
     }

@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import CoreData
 
 protocol LocationUseCaseDelegate: AnyObject {
-    func didUpdateISSLocation(latitude: Double, longitude: Double, timestamp: Int32)
+    func didUpdateISSLocation(latitude: String, longitude: String, timestamp: Int32)
     func didFailToUpdateISSLocation(error: Error)
 }
 protocol LocationUseCaseProtocol{
@@ -50,17 +51,17 @@ class LocationUseCase: LocationUseCaseProtocol {
             guard let self = self else { return }
             switch result {
             case .success(let issData):
-                if let latitude = Double(issData.issPosition.latitude),
-                   let longitude = Double(issData.issPosition.longitude)
-                {
-                    let timestamp = Int32(issData.timestamp)
-                    self.delegate?.didUpdateISSLocation(latitude: latitude, longitude: longitude, timestamp: timestamp)
-                }
+                // Las coordenadas ya son de tipo String, no necesitas el if let
+                let latitude = issData.issPosition.latitude
+                let longitude = issData.issPosition.longitude
+                let timestamp = Int32(issData.timestamp)
+                self.delegate?.didUpdateISSLocation(latitude: latitude, longitude: longitude, timestamp: timestamp)
             case .failure(let error):
                 self.delegate?.didFailToUpdateISSLocation(error: error)
             }
         }
     }
+
     
     deinit {
         stopUpdatingLocation()
