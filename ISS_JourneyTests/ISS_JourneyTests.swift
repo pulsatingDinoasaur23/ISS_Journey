@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import ISS_Journey
+
 
 final class ISS_JourneyTests: XCTestCase {
 

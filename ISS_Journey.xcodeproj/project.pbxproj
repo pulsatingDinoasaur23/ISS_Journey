@@ -7,15 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40858EC12A5A66BF00626202 /* ISS_JourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EC02A5A66BF00626202 /* ISS_JourneyApp.swift */; };
-		40858EC32A5A66BF00626202 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EC22A5A66BF00626202 /* ContentView.swift */; };
-		40858EC52A5A66C000626202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40858EC42A5A66C000626202 /* Assets.xcassets */; };
-		40858EC82A5A66C000626202 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40858EC72A5A66C000626202 /* Preview Assets.xcassets */; };
-		40858ECA2A5A66C000626202 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EC92A5A66C000626202 /* Persistence.swift */; };
-		40858ECD2A5A66C000626202 /* ISS_Journey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40858ECB2A5A66C000626202 /* ISS_Journey.xcdatamodeld */; };
+		40552A222A5F3EED006BBFD1 /* LocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40552A212A5F3EED006BBFD1 /* LocationUseCase.swift */; };
+		4063EB8B2A69B22400B4FE5D /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EB8A2A69B22400B4FE5D /* BaseModel.swift */; };
+		4063EB8E2A69B27E00B4FE5D /* ISSEntity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EB8D2A69B27E00B4FE5D /* ISSEntity+Extensions.swift */; };
+		4063EB922A69BA9B00B4FE5D /* ISSListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EB912A69BA9B00B4FE5D /* ISSListViewModel.swift */; };
+		4063EB962A69C0C700B4FE5D /* ISSTrackDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EB952A69C0C700B4FE5D /* ISSTrackDetail.swift */; };
+		4063EB9C2A69C3B200B4FE5D /* AddItemToListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EB9B2A69C3B200B4FE5D /* AddItemToListViewModel.swift */; };
+		4063EB9E2A69C61800B4FE5D /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EB9D2A69C61800B4FE5D /* AddItemView.swift */; };
+		4063EBA22A69C6EE00B4FE5D /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EBA12A69C6EE00B4FE5D /* View+extensions.swift */; };
+		406458642A5AB2E8005089FB /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EFE2A5A8CB500626202 /* APIClient.swift */; };
+		40858ECD2A5A66C000626202 /* ISSEntity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40858ECB2A5A66C000626202 /* ISSEntity.xcdatamodeld */; };
 		40858ED82A5A66C000626202 /* ISS_JourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858ED72A5A66C000626202 /* ISS_JourneyTests.swift */; };
 		40858EE22A5A66C000626202 /* ISS_JourneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EE12A5A66C000626202 /* ISS_JourneyUITests.swift */; };
 		40858EE42A5A66C000626202 /* ISS_JourneyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EE32A5A66C000626202 /* ISS_JourneyUITestsLaunchTests.swift */; };
+		40858EF82A5A7F2F00626202 /* ISSEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EF72A5A7F2F00626202 /* ISSEntity.swift */; };
+		40858EFC2A5A8C9A00626202 /* ISSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EFB2A5A8C9A00626202 /* ISSService.swift */; };
+		40858F012A5A8DDD00626202 /* CoreDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858F002A5A8DDD00626202 /* CoreDataModels.swift */; };
+		40858F032A5A8EC600626202 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858F022A5A8EC600626202 /* CoreDataManager.swift */; };
+		40858F052A5AA1F000626202 /* ISSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858F042A5AA1EF00626202 /* ISSViewModel.swift */; };
+		40858F072A5AA57200626202 /* ISSTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858F062A5AA57200626202 /* ISSTrackView.swift */; };
+		40858F092A5AA66900626202 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858F082A5AA66900626202 /* AppMain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,19 +47,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40552A212A5F3EED006BBFD1 /* LocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUseCase.swift; sourceTree = "<group>"; };
+		4063EB8A2A69B22400B4FE5D /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		4063EB8D2A69B27E00B4FE5D /* ISSEntity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISSEntity+Extensions.swift"; sourceTree = "<group>"; };
+		4063EB912A69BA9B00B4FE5D /* ISSListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSListViewModel.swift; sourceTree = "<group>"; };
+		4063EB952A69C0C700B4FE5D /* ISSTrackDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSTrackDetail.swift; sourceTree = "<group>"; };
+		4063EB9B2A69C3B200B4FE5D /* AddItemToListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemToListViewModel.swift; sourceTree = "<group>"; };
+		4063EB9D2A69C61800B4FE5D /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		4063EBA12A69C6EE00B4FE5D /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
+		4072F05F2A5F1FD70011B430 /* ISS-Journey-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ISS-Journey-Info.plist"; sourceTree = SOURCE_ROOT; };
 		40858EBD2A5A66BF00626202 /* ISS_Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISS_Journey.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		40858EC02A5A66BF00626202 /* ISS_JourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISS_JourneyApp.swift; sourceTree = "<group>"; };
-		40858EC22A5A66BF00626202 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		40858EC42A5A66C000626202 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40858EC72A5A66C000626202 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		40858EC92A5A66C000626202 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		40858ECC2A5A66C000626202 /* ISS_Journey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ISS_Journey.xcdatamodel; sourceTree = "<group>"; };
-		40858ECE2A5A66C000626202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40858ED32A5A66C000626202 /* ISS_JourneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ISS_JourneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40858ED72A5A66C000626202 /* ISS_JourneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISS_JourneyTests.swift; sourceTree = "<group>"; };
 		40858EDD2A5A66C000626202 /* ISS_JourneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ISS_JourneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40858EE12A5A66C000626202 /* ISS_JourneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISS_JourneyUITests.swift; sourceTree = "<group>"; };
 		40858EE32A5A66C000626202 /* ISS_JourneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISS_JourneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		40858EF72A5A7F2F00626202 /* ISSEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSEntity.swift; sourceTree = "<group>"; };
+		40858EFB2A5A8C9A00626202 /* ISSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSService.swift; sourceTree = "<group>"; };
+		40858EFE2A5A8CB500626202 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		40858F002A5A8DDD00626202 /* CoreDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModels.swift; sourceTree = "<group>"; };
+		40858F022A5A8EC600626202 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		40858F042A5AA1EF00626202 /* ISSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSViewModel.swift; sourceTree = "<group>"; };
+		40858F062A5AA57200626202 /* ISSTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSTrackView.swift; sourceTree = "<group>"; };
+		40858F082A5AA66900626202 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4063EB8C2A69B26000B4FE5D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4063EB8D2A69B27E00B4FE5D /* ISSEntity+Extensions.swift */,
+				4063EBA12A69C6EE00B4FE5D /* View+extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		40858EB42A5A66BF00626202 = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +132,16 @@
 		40858EBF2A5A66BF00626202 /* ISS_Journey */ = {
 			isa = PBXGroup;
 			children = (
-				40858EC02A5A66BF00626202 /* ISS_JourneyApp.swift */,
-				40858EC22A5A66BF00626202 /* ContentView.swift */,
+				4063EB8C2A69B26000B4FE5D /* Extensions */,
+				4072F05F2A5F1FD70011B430 /* ISS-Journey-Info.plist */,
+				40858EF62A5A6BDC00626202 /* Views */,
+				40858EF42A5A691200626202 /* ViewModels */,
+				40858EF32A5A690200626202 /* Models */,
+				40858EF22A5A68F200626202 /* Adapters */,
+				40858EF12A5A68C100626202 /* UseCases */,
+				40858EF02A5A671700626202 /* Entities */,
 				40858EC42A5A66C000626202 /* Assets.xcassets */,
-				40858EC92A5A66C000626202 /* Persistence.swift */,
-				40858ECE2A5A66C000626202 /* Info.plist */,
-				40858ECB2A5A66C000626202 /* ISS_Journey.xcdatamodeld */,
+				40858ECB2A5A66C000626202 /* ISSEntity.xcdatamodeld */,
 				40858EC62A5A66C000626202 /* Preview Content */,
 			);
 			path = ISS_Journey;
@@ -113,6 +150,7 @@
 		40858EC62A5A66C000626202 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				40858F082A5AA66900626202 /* AppMain.swift */,
 				40858EC72A5A66C000626202 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -133,6 +171,77 @@
 				40858EE32A5A66C000626202 /* ISS_JourneyUITestsLaunchTests.swift */,
 			);
 			path = ISS_JourneyUITests;
+			sourceTree = "<group>";
+		};
+		40858EF02A5A671700626202 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				40858EF72A5A7F2F00626202 /* ISSEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		40858EF12A5A68C100626202 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				40552A212A5F3EED006BBFD1 /* LocationUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		40858EF22A5A68F200626202 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				40858EFA2A5A8C6D00626202 /* Api */,
+				40858EF92A5A8C5E00626202 /* Data */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		40858EF32A5A690200626202 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4063EB8A2A69B22400B4FE5D /* BaseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		40858EF42A5A691200626202 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				40858F042A5AA1EF00626202 /* ISSViewModel.swift */,
+				4063EB912A69BA9B00B4FE5D /* ISSListViewModel.swift */,
+				4063EB9B2A69C3B200B4FE5D /* AddItemToListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		40858EF62A5A6BDC00626202 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40858F062A5AA57200626202 /* ISSTrackView.swift */,
+				4063EB952A69C0C700B4FE5D /* ISSTrackDetail.swift */,
+				4063EB9D2A69C61800B4FE5D /* AddItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		40858EF92A5A8C5E00626202 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				40858F002A5A8DDD00626202 /* CoreDataModels.swift */,
+				40858F022A5A8EC600626202 /* CoreDataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		40858EFA2A5A8C6D00626202 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				40858EFB2A5A8C9A00626202 /* ISSService.swift */,
+				40858EFE2A5A8CB500626202 /* APIClient.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,8 +348,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40858EC82A5A66C000626202 /* Preview Assets.xcassets in Resources */,
-				40858EC52A5A66C000626202 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,10 +372,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40858ECA2A5A66C000626202 /* Persistence.swift in Sources */,
-				40858EC32A5A66BF00626202 /* ContentView.swift in Sources */,
-				40858ECD2A5A66C000626202 /* ISS_Journey.xcdatamodeld in Sources */,
-				40858EC12A5A66BF00626202 /* ISS_JourneyApp.swift in Sources */,
+				40858F052A5AA1F000626202 /* ISSViewModel.swift in Sources */,
+				4063EB9E2A69C61800B4FE5D /* AddItemView.swift in Sources */,
+				4063EB922A69BA9B00B4FE5D /* ISSListViewModel.swift in Sources */,
+				40858ECD2A5A66C000626202 /* ISSEntity.xcdatamodeld in Sources */,
+				4063EB8B2A69B22400B4FE5D /* BaseModel.swift in Sources */,
+				4063EB9C2A69C3B200B4FE5D /* AddItemToListViewModel.swift in Sources */,
+				406458642A5AB2E8005089FB /* APIClient.swift in Sources */,
+				4063EB962A69C0C700B4FE5D /* ISSTrackDetail.swift in Sources */,
+				40858F012A5A8DDD00626202 /* CoreDataModels.swift in Sources */,
+				40858F092A5AA66900626202 /* AppMain.swift in Sources */,
+				40858EF82A5A7F2F00626202 /* ISSEntity.swift in Sources */,
+				40552A222A5F3EED006BBFD1 /* LocationUseCase.swift in Sources */,
+				40858F032A5A8EC600626202 /* CoreDataManager.swift in Sources */,
+				4063EB8E2A69B27E00B4FE5D /* ISSEntity+Extensions.swift in Sources */,
+				4063EBA22A69C6EE00B4FE5D /* View+extensions.swift in Sources */,
+				40858EFC2A5A8C9A00626202 /* ISSService.swift in Sources */,
+				40858F072A5AA57200626202 /* ISSTrackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLY_RULES_IN_COPY_FILES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -338,7 +459,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 2.6.9;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEPLOYMENT_LOCATION = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -355,10 +479,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = 1.0.0;
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INFOPLIST_OUTPUT_FORMAT = "same-as-input";
+				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PLIST_FILE_OUTPUT_FORMAT = "same-as-input";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -369,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLY_RULES_IN_COPY_FILES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -398,7 +529,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 2.6.9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_LOCATION = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -409,9 +543,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_FILE[sdk=iphoneos*]" = "";
+				INFOPLIST_KEY_CFBundleDisplayName = 1.0.0;
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INFOPLIST_OUTPUT_FORMAT = "same-as-input";
+				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PLIST_FILE_OUTPUT_FORMAT = "same-as-input";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -425,20 +566,27 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 2.6.9;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ISS_Journey/Preview Content\"";
+				DEVELOPMENT_TEAM = 2AMUMLHU7J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ISS-Journey-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = 1.0.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
+				INFOPLIST_KEY_NSPrincipalClass = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ISSjourney.ISS-Journey";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -453,20 +601,27 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 2.6.9;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ISS_Journey/Preview Content\"";
+				DEVELOPMENT_TEAM = 2AMUMLHU7J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ISS-Journey-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = 1.0.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
+				INFOPLIST_KEY_NSPrincipalClass = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ISSjourney.ISS-Journey";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -481,7 +636,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.6.9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -500,7 +655,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.6.9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -518,7 +673,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.6.9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ISSjourney.ISS-JourneyUITests";
@@ -535,7 +690,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.6.9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ISSjourney.ISS-JourneyUITests";
@@ -589,13 +744,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		40858ECB2A5A66C000626202 /* ISS_Journey.xcdatamodeld */ = {
+		40858ECB2A5A66C000626202 /* ISSEntity.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				40858ECC2A5A66C000626202 /* ISS_Journey.xcdatamodel */,
 			);
 			currentVersion = 40858ECC2A5A66C000626202 /* ISS_Journey.xcdatamodel */;
-			path = ISS_Journey.xcdatamodeld;
+			path = ISSEntity.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
