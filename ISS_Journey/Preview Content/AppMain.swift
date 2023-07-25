@@ -19,14 +19,10 @@ struct ISSApp: App {
     
     var body: some Scene {
         WindowGroup {
-            let apiClient: APIClientProtocol = APIClient()
-            var locationUseCase: LocationUseCaseProtocol = LocationUseCase(apiClient: apiClient)
-            let viewContext = CoreDataManager.shared.persistenseStoreContainer.viewContext
-            
-            let issViewModel = ISSViewModel(apiClient: apiClient, locationUseCase: locationUseCase, context: viewContext)
-            let issListViewModel = ISSListViewModel(context: viewContext)
-            
-            ISSView(viewModel: issViewModel, viewListModel: issListViewModel)
-        }
+                   NavigationView {
+                       HomeView()
+                   }
+                   .navigationViewStyle(StackNavigationViewStyle())
+               }
     }
 }

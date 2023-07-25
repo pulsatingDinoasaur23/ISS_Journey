@@ -12,7 +12,6 @@ protocol APIClientProtocol{
 }
 
 class APIClient: APIClientProtocol {
-
     
     func fetchISSLocation(completion: @escaping (Result<ISSLocalized, Error>) -> Void) {
         let urlString = "http://api.open-notify.org/iss-now.json?callback=?"

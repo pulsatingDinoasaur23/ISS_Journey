@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		40552A222A5F3EED006BBFD1 /* LocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40552A212A5F3EED006BBFD1 /* LocationUseCase.swift */; };
-		4063EB8B2A69B22400B4FE5D /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EB8A2A69B22400B4FE5D /* BaseModel.swift */; };
-		4063EB8E2A69B27E00B4FE5D /* ISSEntity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EB8D2A69B27E00B4FE5D /* ISSEntity+Extensions.swift */; };
 		4063EB922A69BA9B00B4FE5D /* ISSListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EB912A69BA9B00B4FE5D /* ISSListViewModel.swift */; };
 		4063EB962A69C0C700B4FE5D /* ISSTrackDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EB952A69C0C700B4FE5D /* ISSTrackDetail.swift */; };
 		4063EB9C2A69C3B200B4FE5D /* AddItemToListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EB9B2A69C3B200B4FE5D /* AddItemToListViewModel.swift */; };
 		4063EB9E2A69C61800B4FE5D /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EB9D2A69C61800B4FE5D /* AddItemView.swift */; };
 		4063EBA22A69C6EE00B4FE5D /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EBA12A69C6EE00B4FE5D /* View+extensions.swift */; };
+		4063EBC12A70269900B4FE5D /* WelcomeISSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4063EBC02A70269900B4FE5D /* WelcomeISSView.swift */; };
+		4063EBC22A702EEF00B4FE5D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40858EC72A5A66C000626202 /* Preview Assets.xcassets */; };
 		406458642A5AB2E8005089FB /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858EFE2A5A8CB500626202 /* APIClient.swift */; };
 		40858ECD2A5A66C000626202 /* ISSEntity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40858ECB2A5A66C000626202 /* ISSEntity.xcdatamodeld */; };
 		40858ED82A5A66C000626202 /* ISS_JourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40858ED72A5A66C000626202 /* ISS_JourneyTests.swift */; };
@@ -48,16 +48,14 @@
 
 /* Begin PBXFileReference section */
 		40552A212A5F3EED006BBFD1 /* LocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUseCase.swift; sourceTree = "<group>"; };
-		4063EB8A2A69B22400B4FE5D /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		4063EB8D2A69B27E00B4FE5D /* ISSEntity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISSEntity+Extensions.swift"; sourceTree = "<group>"; };
 		4063EB912A69BA9B00B4FE5D /* ISSListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSListViewModel.swift; sourceTree = "<group>"; };
 		4063EB952A69C0C700B4FE5D /* ISSTrackDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSTrackDetail.swift; sourceTree = "<group>"; };
 		4063EB9B2A69C3B200B4FE5D /* AddItemToListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemToListViewModel.swift; sourceTree = "<group>"; };
 		4063EB9D2A69C61800B4FE5D /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		4063EBA12A69C6EE00B4FE5D /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
+		4063EBC02A70269900B4FE5D /* WelcomeISSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeISSView.swift; sourceTree = "<group>"; };
 		4072F05F2A5F1FD70011B430 /* ISS-Journey-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ISS-Journey-Info.plist"; sourceTree = SOURCE_ROOT; };
 		40858EBD2A5A66BF00626202 /* ISS_Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISS_Journey.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		40858EC42A5A66C000626202 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40858EC72A5A66C000626202 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		40858ECC2A5A66C000626202 /* ISS_Journey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ISS_Journey.xcdatamodel; sourceTree = "<group>"; };
 		40858ED32A5A66C000626202 /* ISS_JourneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ISS_JourneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,10 +101,77 @@
 		4063EB8C2A69B26000B4FE5D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4063EB8D2A69B27E00B4FE5D /* ISSEntity+Extensions.swift */,
 				4063EBA12A69C6EE00B4FE5D /* View+extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4063EBB72A6FF09300B4FE5D /* HomeTrackView */ = {
+			isa = PBXGroup;
+			children = (
+				40858F062A5AA57200626202 /* ISSTrackView.swift */,
+				4063EBBA2A6FF11500B4FE5D /* HomeTrackViewModel */,
+			);
+			path = HomeTrackView;
+			sourceTree = "<group>";
+		};
+		4063EBB92A6FF0D400B4FE5D /* DetailTrackView */ = {
+			isa = PBXGroup;
+			children = (
+				4063EB952A69C0C700B4FE5D /* ISSTrackDetail.swift */,
+				4063EBBC2A6FF16500B4FE5D /* AddItemView */,
+				4063EBBB2A6FF13600B4FE5D /* DetailTrackModel */,
+			);
+			path = DetailTrackView;
+			sourceTree = "<group>";
+		};
+		4063EBBA2A6FF11500B4FE5D /* HomeTrackViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				40858F042A5AA1EF00626202 /* ISSViewModel.swift */,
+			);
+			path = HomeTrackViewModel;
+			sourceTree = "<group>";
+		};
+		4063EBBB2A6FF13600B4FE5D /* DetailTrackModel */ = {
+			isa = PBXGroup;
+			children = (
+				4063EB912A69BA9B00B4FE5D /* ISSListViewModel.swift */,
+				4063EBBD2A6FF17600B4FE5D /* DetailViewModel */,
+			);
+			path = DetailTrackModel;
+			sourceTree = "<group>";
+		};
+		4063EBBC2A6FF16500B4FE5D /* AddItemView */ = {
+			isa = PBXGroup;
+			children = (
+				4063EB9D2A69C61800B4FE5D /* AddItemView.swift */,
+			);
+			path = AddItemView;
+			sourceTree = "<group>";
+		};
+		4063EBBD2A6FF17600B4FE5D /* DetailViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4063EB9B2A69C3B200B4FE5D /* AddItemToListViewModel.swift */,
+			);
+			path = DetailViewModel;
+			sourceTree = "<group>";
+		};
+		4063EBBE2A70259000B4FE5D /* WelcomeTrack */ = {
+			isa = PBXGroup;
+			children = (
+				4063EBBF2A7025A100B4FE5D /* WelcomeViewModel */,
+			);
+			path = WelcomeTrack;
+			sourceTree = "<group>";
+		};
+		4063EBBF2A7025A100B4FE5D /* WelcomeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4063EBC02A70269900B4FE5D /* WelcomeISSView.swift */,
+			);
+			path = WelcomeViewModel;
 			sourceTree = "<group>";
 		};
 		40858EB42A5A66BF00626202 = {
@@ -132,15 +197,14 @@
 		40858EBF2A5A66BF00626202 /* ISS_Journey */ = {
 			isa = PBXGroup;
 			children = (
+				4063EBBE2A70259000B4FE5D /* WelcomeTrack */,
+				4063EBB92A6FF0D400B4FE5D /* DetailTrackView */,
+				4063EBB72A6FF09300B4FE5D /* HomeTrackView */,
 				4063EB8C2A69B26000B4FE5D /* Extensions */,
 				4072F05F2A5F1FD70011B430 /* ISS-Journey-Info.plist */,
-				40858EF62A5A6BDC00626202 /* Views */,
-				40858EF42A5A691200626202 /* ViewModels */,
-				40858EF32A5A690200626202 /* Models */,
 				40858EF22A5A68F200626202 /* Adapters */,
 				40858EF12A5A68C100626202 /* UseCases */,
 				40858EF02A5A671700626202 /* Entities */,
-				40858EC42A5A66C000626202 /* Assets.xcassets */,
 				40858ECB2A5A66C000626202 /* ISSEntity.xcdatamodeld */,
 				40858EC62A5A66C000626202 /* Preview Content */,
 			);
@@ -196,34 +260,6 @@
 				40858EF92A5A8C5E00626202 /* Data */,
 			);
 			path = Adapters;
-			sourceTree = "<group>";
-		};
-		40858EF32A5A690200626202 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4063EB8A2A69B22400B4FE5D /* BaseModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		40858EF42A5A691200626202 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				40858F042A5AA1EF00626202 /* ISSViewModel.swift */,
-				4063EB912A69BA9B00B4FE5D /* ISSListViewModel.swift */,
-				4063EB9B2A69C3B200B4FE5D /* AddItemToListViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		40858EF62A5A6BDC00626202 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				40858F062A5AA57200626202 /* ISSTrackView.swift */,
-				4063EB952A69C0C700B4FE5D /* ISSTrackDetail.swift */,
-				4063EB9D2A69C61800B4FE5D /* AddItemView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		40858EF92A5A8C5E00626202 /* Data */ = {
@@ -348,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4063EBC22A702EEF00B4FE5D /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,9 +411,9 @@
 			files = (
 				40858F052A5AA1F000626202 /* ISSViewModel.swift in Sources */,
 				4063EB9E2A69C61800B4FE5D /* AddItemView.swift in Sources */,
+				4063EBC12A70269900B4FE5D /* WelcomeISSView.swift in Sources */,
 				4063EB922A69BA9B00B4FE5D /* ISSListViewModel.swift in Sources */,
 				40858ECD2A5A66C000626202 /* ISSEntity.xcdatamodeld in Sources */,
-				4063EB8B2A69B22400B4FE5D /* BaseModel.swift in Sources */,
 				4063EB9C2A69C3B200B4FE5D /* AddItemToListViewModel.swift in Sources */,
 				406458642A5AB2E8005089FB /* APIClient.swift in Sources */,
 				4063EB962A69C0C700B4FE5D /* ISSTrackDetail.swift in Sources */,
@@ -385,7 +422,6 @@
 				40858EF82A5A7F2F00626202 /* ISSEntity.swift in Sources */,
 				40552A222A5F3EED006BBFD1 /* LocationUseCase.swift in Sources */,
 				40858F032A5A8EC600626202 /* CoreDataManager.swift in Sources */,
-				4063EB8E2A69B27E00B4FE5D /* ISSEntity+Extensions.swift in Sources */,
 				4063EBA22A69C6EE00B4FE5D /* View+extensions.swift in Sources */,
 				40858EFC2A5A8C9A00626202 /* ISSService.swift in Sources */,
 				40858F072A5AA57200626202 /* ISSTrackView.swift in Sources */,
@@ -574,7 +610,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ISS-Journey-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = 1.0.0;
+				INFOPLIST_KEY_CFBundleDisplayName = "ISS TrackApp";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_NSPrincipalClass = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -609,7 +645,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ISS-Journey-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = 1.0.0;
+				INFOPLIST_KEY_CFBundleDisplayName = "ISS TrackApp";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_NSPrincipalClass = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
